@@ -48,7 +48,7 @@ while(True):
   res = cv2.bitwise_and(im, im, mask = mask)
 
   # cv2.imshow('frame', im)
-  # cv2.imshow('mask', mask)
+  cv2.imshow('mask', mask)
   cv2.imshow('res', res)
 
   # im3 = cv2.bitwise_not(im3)
