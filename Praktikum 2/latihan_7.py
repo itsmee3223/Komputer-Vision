@@ -70,7 +70,7 @@ def show_output(output_list):
   plt.show()
 
 def main():
-  img_bgr = cv2.imread("../images/color_ball.jpg")
+  img_bgr = cv2.imread("../images/monas_1.jpg")
   height, width, channel = img_bgr.shape
   img_gray = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2GRAY)
 
