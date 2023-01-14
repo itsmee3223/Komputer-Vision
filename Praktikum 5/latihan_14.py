@@ -18,7 +18,7 @@ def hough_lines_acc(img, rho_resolution=1, theta_resolution=1):
         y = y_idxs[i]
 
         for j in range(len(thetas)): # untuk semua theta dan rho
-            rho = int((x * np.cos(thetas[j]) + y * np.sin(thetas[j]) + img_diagonal ))
+            rho = int((x * np.cos(thetas[j]) + y * np.sin(thetas[j])) + img_diagonal )
 
             H[rho, j] += 1
 
@@ -46,7 +46,7 @@ def hough_peaks(H, num_peaks, thershold=0, nhood_size=3):
 
         if (idx_x - (nhood_size / 2)) < 0: min_x = 0
         else: min_x = idx_x - (nhood_size / 2)
-        if ((idx_x + (nhood_size / 2) + 1) > H.shape[0]) : max_x = H.shape[0]
+        if ((idx_x + (nhood_size / 2) + 1) > H.shape[1]) : max_x = H.shape[1]
         else: max_x = idx_x + (nhood_size / 2) + 1
 
         if (idx_y - (nhood_size / 2)) < 0: min_y = 0
@@ -69,8 +69,8 @@ def hough_peaks(H, num_peaks, thershold=0, nhood_size=3):
 
 # plot (tampilkan) akumulator hough
 def plot_hough_acc(H, plot_tittle="Hough Accumulator Plot"):
-    fig = plt.figure(figsize=(10, 10))
-    fig.canvas.set_window_title(plot_tittle)
+    plt.figure(figsize=(10,10))
+    plt.get_current_fig_manager().set_window_title(plot_tittle)
 
     plt.imshow(H, cmap='jet')
     plt.xlabel("Theta Direction"), plt.ylabel("Rho Direction")
