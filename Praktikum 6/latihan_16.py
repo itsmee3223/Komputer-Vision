@@ -48,7 +48,7 @@ def draw_corner(img, corner_list):
 k = 0.04
 window_size = 5
 thershold = 10000000.00
-img = cv2.imread("../images/kotak_kotak.jpg")
+img = cv2.imread("../images/color_ball_small.jpg")
 img_grayscale = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
 img_blurred = cv2.GaussianBlur(img_grayscale, (3, 3), 1.2)
 
